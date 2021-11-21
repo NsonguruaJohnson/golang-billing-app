@@ -4,38 +4,27 @@ import "fmt"
 
 func main() {
 
-	// Strings
-	// var nameOne string = "Jerry"
-	// var nameTwo = "Johnson"
-	// var nameThree string
+	age := 24
+	name := "Plucky"
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// Print
+	fmt.Print("Hello,")
+	fmt.Print("World! \n")
+	fmt.Print("New line \n")
 
-	// nameOne = "Akpan"
-	// nameThree = "Udo"
+	// Println
+	fmt.Println("Hello Ebonyi")
+	fmt.Println("Goodbye Ebonyi")
+	fmt.Println("My age is", age, "and my name is", name)
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// Formatted string - Printf %_ = format specifier
+	fmt.Printf("My age is %v and my name is %v \n", age, name)
+	fmt.Printf("My age is %q and my name is %q \n", age, name)
+	fmt.Printf("Age is of type %T \n", age)
+	fmt.Printf("You score %0.1f points! \n", 20.5)
 
-	// nameFour := "Baba" // used when initializing and declaring a variable
-	// // This declaration cannot be used outside of a function
-
-	// fmt.Println(nameFour)
-
-	// Integers(ints and float)
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// // bits and memory
-	// var numOne int8 = 25
-	// var numTwo int8 = -128
-	// var numThree uint16 = 259
-
-	// Floats
-	var scoreOne float32 = 30.22
-	var scoreTwo float64 = -222.4444433333
-	scoreThree := 56.56
+	// Sprintf(Save formatted strings)
+	str := fmt.Sprintf("My age is %v and my name is %v \n", age, name)
+	fmt.Println("The saved sring is", str)
 
 }
