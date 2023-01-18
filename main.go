@@ -1,34 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	// var age [3]int = [3]int{5,10,15}
-	var ages = [3]int{10, 20, 30}
+	// greeting := "Hello world people"
 
-	names := [4]string{"Nsongurua", "Akpan", "Jimmy", "Johnson"}
-	// fmt.Println(names, len(names))s
+	// fmt.Println(strings.Contains(greeting, "Hello"))
+	// fmt.Println(strings.ReplaceAll(greeting, "Hello", "Hi"))
+	// fmt.Println(strings.ToUpper(greeting))
+	// fmt.Println(strings.Index(greeting, "w"))
+	// fmt.Println(strings.Split(greeting, "o"))
 
-	names[1] = "Favour"
+	// fmt.Println("Original string is", greeting)
 
-	fmt.Println(ages, len(ages))
-	fmt.Println(names, len(names))
+	ages := []int{100, 15, 10, 40, 20, 30, 5, 25, 35, 40}
+	sort.Ints(ages)
 
-	// Slices(uses arrays under the hood)
-	var scores = []int{100, 40, 30}
-	scores[2] = 400
-	scores = append(scores, 22)
-
-	fmt.Println(scores, len(scores))
-
-	// slice ranges
-	rangeOne := names[1:3]
-	rangeTwo := names[2:]
-	rangeThree := names[:3]
-
-	fmt.Println(rangeOne, rangeTwo, rangeThree)
-
-	rangeOne = append(rangeOne, "kahoots")
-	fmt.Println(rangeOne)
+	fmt.Println(ages)
 
 }
