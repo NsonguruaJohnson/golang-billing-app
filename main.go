@@ -1,37 +1,40 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
+
+func sayGreeting(n string) {
+	fmt.Printf("Good morning %v \n", n)
+}
+
+func sayBye(n string) {
+	fmt.Printf("Goodbye %v \n", n)
+}
+
+func cycleNames(n []string, f func(string)) {
+	for _, v := range n {
+		f(v)
+	}
+}
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
+}
 
 func main() {
-	age := 25
+	// sayGreeting("Nsongurua")
+	// sayGreeting("Johnson")
+	// sayBye("Boss")
 
-	fmt.Println(age <= 50)
-	fmt.Println(age >= 50)
-	fmt.Println(age == 45)
-	fmt.Println(age != 50)
+	cycleNames([]string{"Tom", "Jerry", "Chase", "Ryder"}, sayGreeting)
+	cycleNames([]string{"Tom", "Jerry", "Chase", "Ryder"}, sayBye)
 
-	// if age < 30 {
-	// 	fmt.Println("Age is less than 30")
-	// } else if age < 40 {
-	// 	fmt.Println("Age is less than 40")
-	// } else {
-	// 	fmt.Println("Age is not less than 45")
-	// }
+	a1 := circleArea(10.5)
+	a2 := circleArea(20)
 
-	names := []string{"Nsongurua", "Akpan", "Johnson", "Excellent", "Loyal"}
-
-	for index, value := range names {
-		if index == 1 {
-			fmt.Println("Continuing at position \n", index)
-			continue //break from that particular iteration to the top of the loop
-		}
-
-		if index > 2 {
-			fmt.Println("Breaking at pos", index)
-			break // break out of a loop completely
-		}
-
-		fmt.Printf("The value at pos %v is %v \n", index, value)
-	}
+	fmt.Println(a1, a2)
+	fmt.Printf("%0.3f, %0.2f \n", a1, a2)
 
 }
