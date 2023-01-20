@@ -2,27 +2,22 @@ package main
 
 import "fmt"
 
-func updateName(x string) string {
-	x = "Plucky"
-	return x
-}
-
-func updateMenu(y map[string]float64) {
-	y["coffee"] = 2.99
+func updateName(x *string) {
+	*x = "Plucky"
 }
 
 func main() {
-	// group A types -> strings, ints, bools, floats, arrays, structs
 	name := "Brainy"
 
-	name = updateName(name)
-	fmt.Println(name)
+	// updateName(name)
 
-	// group B types -> slices, maps, functions
-	menu := map[string]float64{
-		"pie":       5.95,
-		"Ice cream": 3.99,
-	}
-	updateMenu(menu)
-	fmt.Println(menu)
+	// fmt.Println("Memory address of name is: ", &name)
+
+	m := &name
+
+	// fmt.Println("Memory address:", m)
+	// fmt.Println("Value at memory address:", *m)
+	fmt.Println(name)
+	updateName(m)
+	fmt.Println(name)
 }
