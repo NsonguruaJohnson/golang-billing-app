@@ -12,7 +12,7 @@ type bill struct {
 func newBill(name string) bill {
 	b := bill{
 		name:  name,
-		items: map[string]float64{"pie": 5.99, "cake": 3.99},
+		items: map[string]float64{},
 		tip:   0,
 	}
 
@@ -20,7 +20,7 @@ func newBill(name string) bill {
 }
 
 // format the bill (any character can be used in place of c)
-func (c bill) format() string {
+func (c *bill) format() string {
 	fs := "Bill breakdown: \n"
 	var total float64 = 0
 
@@ -30,9 +30,24 @@ func (c bill) format() string {
 		total += v
 	}
 
+	// add tip
+	fs += fmt.Sprintf("%-25v ... $%v \n", "tip:", c.tip)
+
 	// total
-	fs += fmt.Sprintf("%-25v ... $%0.2f", "total:", total)
+	fs += fmt.Sprintf("%-25v ... $%0.2f", "total:", total+c.tip)
 
 	return fs
+}
 
+// update tip
+func (c *bill) updateTip(tip float64) {
+	(*c).tip = tip
+	// Telling Go to dereence the line above
+	// Go can also auto matically dereference it
+}
+
+// add an item to the bill
+func (c *bill) addItem(name string, price float64) {
+	c.items[name] = price
+	// Go automatically deferences the line above
 }
