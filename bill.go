@@ -42,7 +42,7 @@ func (c *bill) format() string {
 // update tip
 func (c *bill) updateTip(tip float64) {
 	(*c).tip = tip
-	// Telling Go to dereence the line above
+	// Telling Go to dereference the line above
 	// Go can also auto matically dereference it
 }
 
