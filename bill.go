@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 type bill struct {
 	name  string
@@ -50,4 +53,15 @@ func (c *bill) updateTip(tip float64) {
 func (c *bill) addItem(name string, price float64) {
 	c.items[name] = price
 	// Go automatically deferences the line above
+}
+
+// save bill
+func (c *bill) save() {
+	data := []byte(c.format())
+
+	err := os.WriteFile("bills/"+c.name+".txt", data, 0644)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Bill was saved to file")
 }

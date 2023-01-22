@@ -1,0 +1,5 @@
+Bill breakdown: 
+pizza:                    ... $6000 
+Sharwama:                 ... $2000 
+tip:                      ... $300 
+total:                    ... $8300.00
